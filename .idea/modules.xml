@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/aoip.iml" filepath="$PROJECT_DIR$/aoip.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aoip/aoip-aoip.iml" filepath="$PROJECT_DIR$/aoip/aoip-aoip.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aoiplibrary/aoiplibrary.iml" filepath="$PROJECT_DIR$/aoiplibrary/aoiplibrary.iml" />
+    </modules>
+  </component>
+</project>
