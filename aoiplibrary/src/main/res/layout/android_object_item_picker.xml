@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/id_lib_a_rl_root"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/library_activity_aoip_panel_height">
+    android:layout_height="@dimen/library_activity_aoip_panel_height"
+    android:animateLayoutChanges="true"
+    android:background="@null">
+
+    <com.c0desolut1ons.aoiplibrary.AndroidObjectItemPickerListView
+        android:id="@+id/picker_ui_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 
 </RelativeLayout>

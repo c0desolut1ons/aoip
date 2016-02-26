@@ -8,12 +8,9 @@ import android.widget.RelativeLayout;
 
 import java.text.AttributedCharacterIterator;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-
 /**
  * Main libray class.
- * Used for handle picker component and subcomponents.
+ * Used for handling picker component and subcomponents.
  *
  * @author Nenad Stojnic
  * @email nenad.stojnic@gmail.com
@@ -24,7 +21,8 @@ public class AndroidObjectItemPicker extends RelativeLayout{
 
     private Context mContext;
 
-    @Bind(R.id.id_lib_a_rl_root) RelativeLayout rootLayout;
+
+    private RelativeLayout rootLayout;
 
     public AndroidObjectItemPicker(Context context){
         super(context);
@@ -54,6 +52,8 @@ public class AndroidObjectItemPicker extends RelativeLayout{
     private void initView(AttributeSet attrs) {
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.android_object_item_picker, this, true);
-        ButterKnife.bind(this, view);
+        rootLayout = (RelativeLayout) view.findViewById(R.id.id_lib_a_rl_root);
+
+
     }
 }
