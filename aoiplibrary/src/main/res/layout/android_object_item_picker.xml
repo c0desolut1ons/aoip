@@ -9,7 +9,7 @@
     android:background="@null">
 
     <com.c0desolut1ons.aoiplibrary.AndroidObjectItemPickerListView
-        android:id="@+id/picker_ui_listview"
+        android:id="@+id/id_lib_a_lv_list_picker"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

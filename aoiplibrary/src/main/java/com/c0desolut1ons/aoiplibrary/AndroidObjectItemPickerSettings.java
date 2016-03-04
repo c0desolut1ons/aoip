@@ -39,6 +39,7 @@ public class AndroidObjectItemPickerSettings implements Parcelable {
      * Default behaviour of items
      */
     public static boolean DEFAULT_ITEMS_CLICKABLES = true;
+
     private List<String> mItems;
     private int mColorTextCenter;
     private int mColorTextNoCenter;

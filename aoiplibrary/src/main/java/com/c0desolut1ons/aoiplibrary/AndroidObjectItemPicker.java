@@ -19,7 +19,10 @@ import java.text.AttributedCharacterIterator;
  */
 public class AndroidObjectItemPicker extends RelativeLayout{
 
+    private boolean doesItemsAreClickables = AndroidObjectItemPickerSettings.DEFAULT_ITEMS_CLICKABLES;
+
     private Context mContext;
+    private AndroidObjectItemPickerListView androidObjectItemPickerListView;
 
 
     private RelativeLayout rootLayout;
@@ -53,7 +56,28 @@ public class AndroidObjectItemPicker extends RelativeLayout{
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.android_object_item_picker, this, true);
         rootLayout = (RelativeLayout) view.findViewById(R.id.id_lib_a_rl_root);
+        androidObjectItemPickerListView = (AndroidObjectItemPickerListView) view.findViewById(R.id.id_lib_a_lv_list_picker);
+
+        //set listener on every list item
+        setItemsClickables(doesItemsAreClickables);
+
+    }
+
+    public void setItemsClickables(boolean doesItemsAreClickables){
+        this.doesItemsAreClickables = doesItemsAreClickables;
+        if(androidObjectItemPickerListView != null && androidObjectItemPickerListView.getAndroidObjectItemPickerListViewAdapter()!=null){
+            androidObjectItemPickerListView.getAndroidObjectItemPickerListViewAdapter().setItemsClickables(doesItemsAreClickables);
+        }
 
 
     }
+
+
+    public interface AndroidObjectItemPickerListener {
+
+        public void onItemClickAndroidObjectItemPicker(int which, int position, String valueResult);
+
+    }
+
+
 }

@@ -7,7 +7,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background"/>
+        android:background="#ff0000"/>
 
     <Button
         android:id="@+id/bt_slide"
@@ -61,13 +61,6 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/use_blur"
-                android:id="@+id/cb_use_blur"
-                android:checked="true"/>
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="@string/auto_dismiss"
                 android:id="@+id/cb_auto_dismiss"
                 android:checked="true"/>
@@ -87,10 +80,6 @@
         pickerui:entries="@array/months"
         pickerui:textCenterColor="#000000"
         pickerui:textNoCenterColor="#737373"
-        pickerui:blur="true"
-        pickerui:blur_downScaleFactor="@integer/blur_downscale_min"
-        pickerui:blur_FilterColor="#ff5e48"
-        pickerui:blur_radius="@integer/blur_radius_min"
-        pickerui:blur_use_renderscript="true"/>
+        />
 
 </RelativeLayout>

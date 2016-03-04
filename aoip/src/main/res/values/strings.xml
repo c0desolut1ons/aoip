@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">aoip</string>
     <string name="action_settings">Settings</string>
+    <string name="slide">Show picker</string>
+    <string name="items_clickables">Show picker</string>
+    <string name="random_color">Random color or transparent</string>
+    <string name="auto_dismiss">Auto dismiss</string>
 </resources>
