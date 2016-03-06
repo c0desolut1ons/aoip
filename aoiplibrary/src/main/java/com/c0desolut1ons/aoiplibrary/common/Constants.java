@@ -1,4 +1,4 @@
-package common;
+package com.c0desolut1ons.aoiplibrary.common;
 
 /**
  * Description

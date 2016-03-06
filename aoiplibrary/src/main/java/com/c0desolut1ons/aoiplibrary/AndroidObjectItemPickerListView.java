@@ -3,12 +3,16 @@ package com.c0desolut1ons.aoiplibrary;
 import android.content.Context;
 import android.os.Handler;
 import android.util.AttributeSet;
+import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.List;
 
-import adapter.AndroidObjectItemPickerListViewAdapter;
+import com.c0desolut1ons.aoiplibrary.adapter.AndroidObjectItemPickerListViewAdapter;
+import com.c0desolut1ons.aoiplibrary.common.Constants;
 
 /**
  * Description
@@ -26,6 +30,7 @@ public class AndroidObjectItemPickerListView extends ListView {
     private boolean scrollEnabled = false;
     private int objectId;
     private int lastPositionNotified;
+    private int firstItem, scrollTop;
 
     public AndroidObjectItemPickerListView(Context context){
         super(context);
@@ -70,6 +75,43 @@ public class AndroidObjectItemPickerListView extends ListView {
             }
         });
 
+        setOnScrollListener(new OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                if (scrollState == 0) {
+                    getItemInListCenter();
+                    if (scrollTop < -Constants.PICKER_LIST_ITEM_HEIGHT) {
+                        mAdapter.handleSelectEvent(firstItem + 1 + 2);
+                        selectListItem(firstItem + 1, true);
+                    } else {
+                        selectListItem(firstItem, true);
+                    }
+                }
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
+                                 int totalItemCount) {
+                // save index and top position
+                View v = getChildAt(0);
+
+                //Required to select the closest item when finger releases scroll
+                scrollTop = (v == null) ? 0 : v.getTop();
+                firstItem = firstVisibleItem;
+
+                if (scrollEnabled) {
+                    getItemInListCenter();
+                }
+            }
+        });
+
+        setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                setNewPositionCenter(position);
+            }
+        });
+
     }
 
     public void setItems(Context context, List<String> items, int id, int position, boolean itemsClickables) {
@@ -93,13 +135,12 @@ public class AndroidObjectItemPickerListView extends ListView {
                     if (mItemClickAndroidObjectItemPicker == null) {
                         throw new IllegalStateException("Error!");
                     }
-                    mItemClickAndroidObjectItemPicker.onItemClickAndroidObjectItemPicker(objectId, position, items.get(position));
+                    mItemClickAndroidObjectItemPicker.onItemClickAndroidObjectItemPickers(objectId, position, items.get(position));
                 }
-            }, 100);
+            }, 500);
 
         }
     }
-
 
     private void setNewPositionCenter(int position) {
         mAdapter.handleSelectEvent(position);
@@ -121,14 +162,12 @@ public class AndroidObjectItemPickerListView extends ListView {
         return position - 2;
     }
 
-    private void setOnItemClickAndroidObjectItemPicker(AndroidObjectItemPickerClickListener listener){
+    public void setOnItemClickAndroidObjectItemPicker(AndroidObjectItemPickerClickListener listener){
         mItemClickAndroidObjectItemPicker = listener;
     }
 
-    interface AndroidObjectItemPickerClickListener {
-        void onItemClickAndroidObjectItemPicker(int id, int position, String valueResult);
+    public interface AndroidObjectItemPickerClickListener {
+        void onItemClickAndroidObjectItemPickers(int id, int position, String valueResult);
     }
-
-
 
 }

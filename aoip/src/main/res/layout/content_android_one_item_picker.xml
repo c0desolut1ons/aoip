@@ -1,85 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:pickerui="http://schemas.android.com/apk/res-auto"
+    xmlns:aoip="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ff0000"/>
-
-    <Button
-        android:id="@+id/bt_slide"
-        android:text="@string/slide"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        android:layout_marginTop="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:background="#650000"/>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="15dp"
-        android:layout_below="@+id/bt_slide"
-        android:weightSum="2"
-        android:id="@+id/linearLayout">
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
 
-        <LinearLayout
+        <!-- example how to use picker -->
+
+        <com.c0desolut1ons.aoiplibrary.AndroidObjectItemPicker
+            android:id="@+id/picker_ui_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/random_color"
-                android:id="@+id/cb_random_color"/>
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/items_clickables"
-                android:id="@+id/cb_items_clickables"
-                android:checked="true"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/auto_dismiss"
-                android:id="@+id/cb_auto_dismiss"
-                android:checked="true"/>
-
-        </LinearLayout>
+            aoip:backgroundColor="#ffdadd"
+            aoip:linesCenterColor="#33ffffff"
+            aoip:entries="@array/countries_array"
+            aoip:autoDismiss="false"
+            aoip:itemsClickables="true"
+            aoip:textCenterColor="#ffffff"
+            aoip:textNoCenterColor="#cccccc"/>
 
     </LinearLayout>
 
-    <com.c0desolut1ons.aoiplibrary.AndroidObjectItemPicker
-        android:id="@+id/picker_ui_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        pickerui:backgroundColor="#4cffa5"
-        pickerui:linesCenterColor="#3941ff"
-        pickerui:autoDismiss="true"
-        pickerui:itemsClickables="true"
-        pickerui:entries="@array/months"
-        pickerui:textCenterColor="#000000"
-        pickerui:textNoCenterColor="#737373"
-        />
+
 
 </RelativeLayout>

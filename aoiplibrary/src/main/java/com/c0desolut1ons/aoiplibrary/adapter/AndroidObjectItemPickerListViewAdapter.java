@@ -1,16 +1,13 @@
-package adapter;
+package com.c0desolut1ons.aoiplibrary.adapter;
 
 import android.content.Context;
-import android.os.Handler;
-import android.util.AttributeSet;
+import android.graphics.Typeface;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.c0desolut1ons.aoiplibrary.R;
@@ -67,18 +64,15 @@ public class AndroidObjectItemPickerListViewAdapter extends ArrayAdapter<String>
     public View getView(int position, View convertView, ViewGroup parent) {
 
         if (convertView == null) {
-            LayoutInflater vi = (LayoutInflater) mContext.getSystemService(
-                    Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater vi = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = vi.inflate(R.layout.android_object_item_picker_list_item, parent, false);
         }
 
         TextView textItem = ViewHolder.get(convertView, R.id.tv_item);
+
         String option = items.get(position);
         textItem.setText(option);
 
-        /**
-         * If isInEditMode active, don't set styles
-         */
         if (!isInEditMode) {
             setTextItemStyle(textItem, position);
         }
@@ -86,12 +80,6 @@ public class AndroidObjectItemPickerListViewAdapter extends ArrayAdapter<String>
         return convertView;
     }
 
-    /**
-     * This method sets the appropriate style to each of the components to get a carousel effect.
-     *
-     * @param textItem the TextView of the current position of the actual item
-     * @param position the current position of the actual item
-     */
     private void setTextItemStyle(TextView textItem, int position) {
 
         if (position == centerPosition) {
@@ -129,6 +117,10 @@ public class AndroidObjectItemPickerListViewAdapter extends ArrayAdapter<String>
 
             textItem.setTextAppearance(mContext, R.style.PickerUI_Small_Item);
         }
+
+        textItem.setTypeface(Typeface.create("sans-serif-thin", Typeface.NORMAL));
+
+
     }
 
     private void setTextCenterColor(TextView textItem) {
@@ -143,32 +135,14 @@ public class AndroidObjectItemPickerListViewAdapter extends ArrayAdapter<String>
         }
     }
 
-    /**
-     * Sets the text color for the item of the center.
-     *
-     * @param color the color of the text
-     */
     public void setColorTextCenter(int color) {
         mColorTextCenter = color;
     }
 
-    /**
-     * Sets the text color for the items which aren't in the center.
-     *
-     * @param color the color of the text
-     */
     public void setColorTextNoCenter(int color) {
         mColorTextNoCenter = color;
     }
 
-    /**
-     * This method is used to set the items to display in the panel and the empty rows int the
-     * beginning and in the
-     * end.
-     *
-     * @param rawItems elements to show in panel
-     * @param position position to set in the center of the list. By default, is the half of items.
-     */
     void setItems(List<String> rawItems, int position) {
 
         addEmptyRows(rawItems);
@@ -181,39 +155,22 @@ public class AndroidObjectItemPickerListViewAdapter extends ArrayAdapter<String>
 
     }
 
-
     public void handleSelectEvent(int position) {
         this.centerPosition = position;
         this.notifyDataSetChanged();
     }
 
-    /**
-     * This method set if the elements can be clicked by the user.
-     *
-     * @param itemsClickables indicates whether the items are clickable or not.
-     */
     public void setItemsClickables(boolean itemsClickables) {
         this.itemsClickables = itemsClickables;
     }
 
-    /**
-     * The first two positions must be empty.
-     * The last 2 positions must be empty too.
-     */
     private void setPositonsNoClickables() {
-
         positionsNoClickables.put(0, 0);
         positionsNoClickables.put(1, 1);
         positionsNoClickables.put(items.size() - 2, items.size() - 2);
         positionsNoClickables.put(items.size() - 1, items.size() - 1);
     }
 
-    /**
-     * The first two positions must be empty.
-     * The last 2 positions must be empty too.
-     *
-     * @param rawItems the items to show in panel
-     */
     private void addEmptyRows(List<String> rawItems) {
 
         List<String> emptyRows = Arrays.asList(EMPTY_STRING, EMPTY_STRING);
@@ -230,16 +187,7 @@ public class AndroidObjectItemPickerListViewAdapter extends ArrayAdapter<String>
         return items.size();
     }
 
-    /**
-     * This method indicates whether items can be clicked.
-     *
-     * if it is allowed that elements can be clicked, the first two positions and the last 2
-     * positions can not be
-     * pressed.
-     *
-     * @param position the current position of the actual item
-     * @return if this item is clickable
-     */
+
     @Override
     public boolean isEnabled(int position) {
         if (!itemsClickables) {
@@ -251,9 +199,6 @@ public class AndroidObjectItemPickerListViewAdapter extends ArrayAdapter<String>
         }
     }
 
-    /**
-     * Generic ViewHolde static class
-     */
     public static class ViewHolder {
 
         @SuppressWarnings("unchecked")

@@ -3,17 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/tv_item"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_normal_item_pickerui"
         android:gravity="center"
+        android:fontFamily="sans-serif-light"
         android:textSize="@dimen/textsize_near_center_pickerui_item"
-        android:ellipsize="end"
-        android:singleLine="true"
-        />
+        android:singleLine="true"/>
 
 </LinearLayout>

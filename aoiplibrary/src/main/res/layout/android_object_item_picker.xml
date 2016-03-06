@@ -11,7 +11,22 @@
     <com.c0desolut1ons.aoiplibrary.AndroidObjectItemPickerListView
         android:id="@+id/id_lib_a_lv_list_picker"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        style="@style/PickerUI.ListView"/>
+
+    <View
+        android:id="@+id/picker_line_top"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margin_top_line_top_pickerui"
+        style="@style/line_center_default"
+        />
+
+    <View
+        android:id="@+id/picker_line_bottom"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margin_top_line_bottom_pickerui"
+        style="@style/line_center_default"
+        />
 
 
 </RelativeLayout>

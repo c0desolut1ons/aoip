@@ -31,13 +31,9 @@ public class AndroidObjectItemPickerSettings implements Parcelable {
             return new AndroidObjectItemPickerSettings[size];
         }
     };
-    /**
-     * Default behaviour of PickerUi when an item is selected
-     */
+
     public static boolean DEFAULT_AUTO_DISMISS = true;
-    /**
-     * Default behaviour of items
-     */
+
     public static boolean DEFAULT_ITEMS_CLICKABLES = true;
 
     private List<String> mItems;
@@ -61,10 +57,6 @@ public class AndroidObjectItemPickerSettings implements Parcelable {
         setLinesColor(builder.mLinesColor);
         setItemsClickables(builder.mItemsClickables);
         setAutoDismiss(builder.mAutoDismiss);
-        //setUseBlur(builder.mUseBlur);
-        //setUseBlurRenderscript(builder.mUseBlurRenderscript);
-        //setBlurDownScaleFactor(builder.mDownScaleFactor);
-        //setBlurRadius(builder.mRadius);
         setBlurFilterColor(builder.mFilterColor);
     }
 
@@ -203,17 +195,13 @@ public class AndroidObjectItemPickerSettings implements Parcelable {
     public static final class Builder {
 
         private List<String> mItems;
-        private int mColorTextCenter            = R.color.text_center_pickerui;
-        private int mColorTextNoCenter          = R.color.text_no_center_pickerui;
-        private int mBackgroundColor            = R.color.background_panel_pickerui;
-        private int mLinesColor                 = R.color.lines_panel_pickerui;
-        //private boolean mUseBlur                = PickerUIBlur.DEFAULT_USE_BLUR;
-        //private boolean mUseBlurRenderscript    = PickerUIBlur.DEFAULT_USE_BLUR_RENDERSCRIPT;
-        private boolean mItemsClickables        = DEFAULT_ITEMS_CLICKABLES;
-        //private float mDownScaleFactor          = PickerUIBlur.DEFAULT_DOWNSCALE_FACTOR;
-        //private int mRadius                     = PickerUIBlur.DEFAULT_BLUR_RADIUS;
-        private boolean mAutoDismiss            = DEFAULT_AUTO_DISMISS;
-        private int mFilterColor                = -1;
+        private int mColorTextCenter = R.color.text_center_aoip;
+        private int mColorTextNoCenter = R.color.text_no_center_aoip;
+        private int mBackgroundColor = R.color.background_panel_aoip;
+        private int mLinesColor = R.color.lines_panel_aoip;
+        private boolean mItemsClickables = DEFAULT_ITEMS_CLICKABLES;
+        private boolean mAutoDismiss = DEFAULT_AUTO_DISMISS;
+        private int mFilterColor = -1;
 
         public Builder() {
         }
@@ -257,31 +245,6 @@ public class AndroidObjectItemPickerSettings implements Parcelable {
             this.mAutoDismiss = mAutoDismiss;
             return this;
         }
-
-//        public Builder withBlurDownScaleFactor(float mDownScaleFactor) {
-//            this.mDownScaleFactor = mDownScaleFactor;
-//            return this;
-//        }
-//
-//        public Builder withBlurRadius(int mRadius) {
-//            this.mRadius = mRadius;
-//            return this;
-//        }
-//
-//        public Builder withBlurFilterColor(int mFilterColor) {
-//            this.mFilterColor = mFilterColor;
-//            return this;
-//        }
-//
-//        public Builder withUseBlurRenderscript(boolean mUseBlurRenderscript) {
-//            this.mUseBlurRenderscript = mUseBlurRenderscript;
-//            return this;
-//        }
-//
-//        public Builder withUseBlur(boolean mUseBlur) {
-//            this.mUseBlur = mUseBlur;
-//            return this;
-//        }
 
         public AndroidObjectItemPickerSettings build() {
             return new AndroidObjectItemPickerSettings(this);
