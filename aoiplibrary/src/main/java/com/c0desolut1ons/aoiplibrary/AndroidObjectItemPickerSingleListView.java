@@ -1,7 +1,7 @@
 package com.c0desolut1ons.aoiplibrary;
 
 /**
- * Description
+ * Class for list view the same datasource which we use also for scroll picker.
  *
  * @author Nenad Stojnic
  * @email nenad.stojnic@gmail.com

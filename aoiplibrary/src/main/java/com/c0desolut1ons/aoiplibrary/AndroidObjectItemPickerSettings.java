@@ -131,42 +131,6 @@ public class AndroidObjectItemPickerSettings implements Parcelable {
         mAutoDismiss = autoDismiss;
     }
 
-    public boolean isUseBlur() {
-        return mUseBlur;
-    }
-
-    void setUseBlur(boolean useBlur) {
-        mUseBlur = useBlur;
-    }
-
-    public boolean isUseBlurRenderscript() {
-        return mUseBlurRenderscript;
-    }
-
-    void setUseBlurRenderscript(boolean useBlurRenderscript) {
-        mUseBlurRenderscript = useBlurRenderscript;
-    }
-
-    public float getBlurDownScaleFactor() {
-        return mBlurDownScaleFactor;
-    }
-
-    void setBlurDownScaleFactor(float blurDownScaleFactor) {
-        mBlurDownScaleFactor = blurDownScaleFactor;
-    }
-
-    public int getBlurRadius() {
-        return mBlurRadius;
-    }
-
-    void setBlurRadius(int blurRadius) {
-        mBlurRadius = blurRadius;
-    }
-
-    public int getBlurFilterColor() {
-        return mBlurFilterColor;
-    }
-
     void setBlurFilterColor(int blurFilterColor) {
         mBlurFilterColor = blurFilterColor;
     }

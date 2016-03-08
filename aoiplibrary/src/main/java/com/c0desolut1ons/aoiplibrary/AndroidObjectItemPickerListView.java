@@ -15,7 +15,8 @@ import com.c0desolut1ons.aoiplibrary.adapter.AndroidObjectItemPickerListViewAdap
 import com.c0desolut1ons.aoiplibrary.common.Constants;
 
 /**
- * Description
+ * Library class which simulate scroll picker with plain ListView.
+ * Data source are places in list view with known number of elements.
  *
  * @author Nenad Stojnic
  * @email nenad.stojnic@gmail.com

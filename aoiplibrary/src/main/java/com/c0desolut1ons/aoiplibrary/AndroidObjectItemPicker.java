@@ -221,25 +221,6 @@ public class AndroidObjectItemPicker extends RelativeLayout {
         rootLayout.setVisibility(View.VISIBLE);
         setBackgroundPanel();
         setBackgroundLines();
-        //Animation bottomUp = AnimationUtils.loadAnimation(mContext, R.anim.picker_panel_bottom_up);
-        //rootLayout.startAnimation(bottomUp);
-//        bottomUp.setAnimationListener(new Animation.AnimationListener() {
-//            @Override
-//            public void onAnimationStart(Animation animation) {
-//                if (androidObjectItemPickerListView != null && androidObjectItemPickerListView.getAndroidObjectItemPickerListViewAdapter() != null) {
-//                    androidObjectItemPickerListView.getAndroidObjectItemPickerListViewAdapter().handleSelectEvent(position + 2);
-//                    androidObjectItemPickerListView.setSelection(position);
-//                }
-//            }
-//
-//            @Override
-//            public void onAnimationEnd(Animation animation) {
-//            }
-//
-//            @Override
-//            public void onAnimationRepeat(Animation animation) {
-//            }
-//        });
     }
 
 
