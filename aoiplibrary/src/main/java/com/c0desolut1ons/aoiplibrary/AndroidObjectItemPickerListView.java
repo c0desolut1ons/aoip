@@ -19,9 +19,6 @@ import com.c0desolut1ons.aoiplibrary.common.Constants;
  * Data source are places in list view with known number of elements.
  *
  * @author Nenad Stojnic
- * @email nenad.stojnic@gmail.com
- * @company dzomba.net
- * @date 24.02.2016 08:13
  */
 public class AndroidObjectItemPickerListView extends ListView {
 

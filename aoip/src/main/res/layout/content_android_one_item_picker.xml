@@ -22,10 +22,9 @@
             android:id="@+id/picker_ui_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            aoip:backgroundColor="#ffdadd"
-            aoip:linesCenterColor="#33ffffff"
             aoip:entries="@array/countries_array"
             aoip:autoDismiss="false"
+            aoip:linesCenterColor="#33ffffff"
             aoip:itemsClickables="true"
             aoip:textCenterColor="#ffffff"
             aoip:textNoCenterColor="#cccccc"/>

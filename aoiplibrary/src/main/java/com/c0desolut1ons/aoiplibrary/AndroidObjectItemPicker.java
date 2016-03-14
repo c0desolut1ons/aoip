@@ -19,9 +19,6 @@ import java.util.List;
  * Used for handling picker component and subcomponents.
  *
  * @author Nenad Stojnic
- * @email nenad.stojnic@gmail.com
- * @company dzomba.net
- * @date 23.02.2016 18:09
  */
 public class AndroidObjectItemPicker extends RelativeLayout {
 
@@ -38,7 +35,7 @@ public class AndroidObjectItemPicker extends RelativeLayout {
     private AndroidObjectItemPickerListener mAndroidObjectItemPickerListener;
 
     private List<String> items;
-    private int position;
+    private int position  = 0;
 
     private RelativeLayout rootLayout;
 
@@ -149,7 +146,7 @@ public class AndroidObjectItemPicker extends RelativeLayout {
         }
     }
 
-    private void slideUp(int position) {
+    public void slideUp(int position) {
         //Render to do the blur effect
         this.position = position;
 

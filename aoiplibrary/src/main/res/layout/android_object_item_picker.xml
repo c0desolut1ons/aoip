@@ -12,7 +12,8 @@
         android:id="@+id/id_lib_a_lv_list_picker"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        style="@style/PickerUI.ListView"/>
+        android:listSelector="@drawable/aoip_list_selector"
+        style="@style/AndroidOneItemPicker.ListView"/>
 
     <View
         android:id="@+id/picker_line_top"

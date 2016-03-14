@@ -15,9 +15,6 @@ import java.util.List;
  * Used for handling picker component and subcomponents.
  *
  * @author Nenad Stojnic
- * @email nenad.stojnic@gmail.com
- * @company dzomba.net
- * @date 23.02.2016 18:09
  */
 public class AndroidObjectItemPickerSettings implements Parcelable {
 

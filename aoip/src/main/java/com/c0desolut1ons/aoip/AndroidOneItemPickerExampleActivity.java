@@ -39,7 +39,6 @@ public class AndroidOneItemPickerExampleActivity extends AppCompatActivity {
         findViews();
 
         options = Arrays.asList(getResources().getStringArray(R.array.countries_array));
-
         //Populate list
         mAndroidObjectItemPicker.setItems(this, options);
         mAndroidObjectItemPicker.setColorTextCenter(R.color.center_font_color);
@@ -47,7 +46,6 @@ public class AndroidOneItemPickerExampleActivity extends AppCompatActivity {
         mAndroidObjectItemPicker.setBackgroundColorPanel(R.color.background_picker);
         mAndroidObjectItemPicker.setLinesColor(R.color.background_picker);
         mAndroidObjectItemPicker.setItemsClickables(true);
-        mAndroidObjectItemPicker.setAutoDismiss(false);
 
         mAndroidObjectItemPicker.setOnClickItemPickerUIListener(
                 new AndroidObjectItemPicker.AndroidObjectItemPickerListener() {

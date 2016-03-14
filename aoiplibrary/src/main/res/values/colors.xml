@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="aopi_primary_color">#27a3cc</color>
     <color name="lines_panel_aoip">#33000000</color>
     <color name="background_panel_aoip">#fffafafa</color>
     <color name="text_center_aoip">#ffffff</color>

@@ -1,12 +1,9 @@
 package com.c0desolut1ons.aoiplibrary.common;
 
 /**
- * Description
+ * Global library constants.
  *
  * @author Nenad Stojnic
- * @email nenad.stojnic@gmail.com
- * @company dzomba.net
- * @date 25.02.2016 22:06
  */
 public class Constants {
 
