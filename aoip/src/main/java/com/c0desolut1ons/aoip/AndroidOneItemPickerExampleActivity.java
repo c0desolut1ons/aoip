@@ -47,6 +47,8 @@ public class AndroidOneItemPickerExampleActivity extends AppCompatActivity {
         mAndroidObjectItemPicker.setLinesColor(R.color.background_picker);
         mAndroidObjectItemPicker.setItemsClickables(true);
 
+
+
         mAndroidObjectItemPicker.setOnClickItemPickerUIListener(
                 new AndroidObjectItemPicker.AndroidObjectItemPickerListener() {
 
@@ -86,6 +88,8 @@ public class AndroidOneItemPickerExampleActivity extends AppCompatActivity {
 //                }
             }
         });
+
+        mAndroidObjectItemPicker.setItemInCenter(5);
 
     }
 

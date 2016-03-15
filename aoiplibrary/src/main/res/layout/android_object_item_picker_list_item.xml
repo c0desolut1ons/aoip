@@ -11,6 +11,7 @@
         android:layout_height="@dimen/height_normal_item_pickerui"
         android:gravity="center"
         android:fontFamily="sans-serif-light"
+        android:textColor="@drawable/aoip_list_selector_font"
         android:textSize="@dimen/textsize_near_center_pickerui_item"
         android:singleLine="true"/>
 

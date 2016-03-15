@@ -187,6 +187,10 @@ public class AndroidObjectItemPicker extends RelativeLayout {
         }
     }
 
+    public void setItemInCenter(int position) {
+            androidObjectItemPickerListView.setItemInListCenter(position);
+    }
+
     public void setColorTextCenter(int color) {
         if (androidObjectItemPickerListView != null && androidObjectItemPickerListView.getAndroidObjectItemPickerListViewAdapter() != null) {
 

@@ -62,7 +62,7 @@ public class AndroidObjectItemPickerListView extends ListView {
             public void onGlobalLayout() {
                 scrollEnabled = true;
                 if (AndroidObjectItemPickerListView.this.items != null) {
-                    selectListItem(AndroidObjectItemPickerListView.this.items.size() / 2, false);
+                    //selectListItem(AndroidObjectItemPickerListView.this.items.size() / 2, false);
                 }
 
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
@@ -148,6 +148,20 @@ public class AndroidObjectItemPickerListView extends ListView {
     public int getItemInListCenter() {
 
         int position = pointToPosition(getWidth() / 2, getHeight() / 2);
+        if (position != -1) {
+
+            if (position != lastPositionNotified) {
+
+                //Only refresh adapter on different positions
+                lastPositionNotified = position;
+                mAdapter.handleSelectEvent(position);
+            }
+        }
+        return position - 2;
+    }
+
+    public int setItemInListCenter(int position) {
+
         if (position != -1) {
 
             if (position != lastPositionNotified) {
