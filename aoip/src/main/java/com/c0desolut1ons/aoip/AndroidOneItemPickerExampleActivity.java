@@ -89,7 +89,7 @@ public class AndroidOneItemPickerExampleActivity extends AppCompatActivity {
             }
         });
 
-        mAndroidObjectItemPicker.setItemInCenter(5);
+        mAndroidObjectItemPicker.setItemInCenter(4);
 
     }
 

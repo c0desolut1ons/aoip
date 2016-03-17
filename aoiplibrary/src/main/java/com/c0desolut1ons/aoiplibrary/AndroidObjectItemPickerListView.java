@@ -140,7 +140,7 @@ public class AndroidObjectItemPickerListView extends ListView {
         }
     }
 
-    private void setNewPositionCenter(int position) {
+    public void setNewPositionCenter(int position) {
         mAdapter.handleSelectEvent(position);
         selectListItem(position - 2, true);
     }
